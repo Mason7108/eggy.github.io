@@ -1,656 +1,502 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <title>Eggy Car</title>
+
+<head>
 
     <meta charset="utf-8" />
-    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="" />
+    <title>TBG95 Chats</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="TBG95 Chats" name="description" />
 
-    <!-- Css -->
-    <link rel="stylesheet" href="./css/style.css" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" id="tabIcon">
 
-    <!-- Dark Mode JS -->
-    <script src="./js/darkMode.bundle.js"></script>
+    <!-- glightbox css -->
+    <link rel="stylesheet" href="assets/libs/glightbox/css/glightbox.min.css">
 
-    <!-- Favicons -->
-    <link rel="shortcut icon" href="/img/favicon.png" />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7889675448259925"
-     crossorigin="anonymous"></script>
-     <meta name="google-site-verification" content="WLh2zDxMfssdO3FzwhVfpXO2UtNIp_61DsOegWofho8" />
-     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ2JYMQPM2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+    <!-- One of the following themes -->
+    <link rel="stylesheet" href="assets/libs/@simonwep/pickr/themes/nano.min.css" /> <!-- 'classic' theme -->
 
-      gtag('config', 'G-RZ2JYMQPM2');
-    </script>
-  </head>
+    <!-- swiper css -->
+    <link rel="stylesheet" href="assets/libs/swiper/swiper-bundle.min.css">
 
-  <body
-    class="dark:bg-jacarta-900 font-body text-jacarta-500 overflow-x-hidden"
-    itemscope
-    itemtype="http://schema.org/WebPage"
-  >
-    <!-- Header -->
-    <header class="js-page-header fixed top-0 z-20 w-full backdrop-blur transition-colors">
-      <div class="flex items-center px-6 py-6 xl:px-24">
-        <!-- Logo -->
-        <a href="/" class="shrink-0">
-          <img src="img/logo.png" class="max-h-7 dark:hidden" alt="Eggy Car" />
-          <img src="img/logo_white.png" class="hidden max-h-7 dark:block" alt="Eggy Car" />
-        </a>
+    <!-- Bootstrap Css -->
+    <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
-        <!-- Search -->
-        <form action="search" class="relative ml-12 mr-8 hidden basis-3/12 lg:block xl:ml-[8%]">
-          <input
-            type="search"
-            class="text-jacarta-700 placeholder-jacarta-500 focus:ring-accent border-jacarta-100 w-full rounded-2xl border py-[0.6875rem] px-4 pl-10 dark:border-transparent dark:bg-white/[.15] dark:text-white dark:placeholder-white"
-            placeholder="Search"
-          />
-          <span class="absolute left-0 top-0 flex h-full w-12 items-center justify-center rounded-2xl">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="24"
-              height="24"
-              class="fill-jacarta-500 h-4 w-4 dark:fill-white"
-            >
-              <path fill="none" d="M0 0h24v24H0z" />
-              <path
-                d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"
-              />
-            </svg>
-          </span>
-        </form>
+</head>
 
-        <!-- Menu / Actions -->
-        <div
-          class="js-mobile-menu dark:bg-jacarta-800 invisible fixed inset-0 z-10 ml-auto items-center bg-white opacity-0 lg:visible lg:relative lg:inset-auto lg:flex lg:bg-transparent lg:opacity-100 dark:lg:bg-transparent"
-        >
-          <!-- Mobile Logo / Menu Close -->
-          <div
-            class="t-0 dark:bg-jacarta-800 fixed left-0 z-10 flex w-full items-center justify-between bg-white p-6 lg:hidden"
-          >
-            <!-- Mobile Logo -->
-            <a href="/" class="shrink-0">
-              <img src="img/logo.png" class="max-h-7 dark:hidden" alt="Eggy Car" />
-              <img src="img/logo_white.png" class="hidden max-h-7 dark:block" alt="Eggy Car" />
-            </a>
+<body>
 
-            <!-- Mobile Menu Close -->
-            <button
-              class="js-mobile-close border-jacarta-100 hover:bg-accent focus:bg-accent group dark:hover:bg-accent ml-2 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
-              aria-label="close mobile menu"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="24"
-                height="24"
-                class="fill-jacarta-700 h-4 w-4 transition-colors group-hover:fill-white group-focus:fill-white dark:fill-white"
-              >
-                <path fill="none" d="M0 0h24v24H0z" />
-                <path
-                  d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"
-                />
-              </svg>
-            </button>
-          </div>
+<div class="layout-wrapper d-lg-flex">
 
-          <!-- Mobile Search -->
-          <form action="search" class="relative mt-24 mb-8 w-full lg:hidden">
-            <input
-              type="search"
-              class="text-jacarta-700 placeholder-jacarta-500 focus:ring-accent border-jacarta-100 w-full rounded-2xl border py-3 px-4 pl-10 dark:border-transparent dark:bg-white/[.15] dark:text-white dark:placeholder-white"
-              placeholder="Search"
-            />
-            <span class="absolute left-0 top-0 flex h-full w-12 items-center justify-center rounded-2xl">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="24"
-                height="24"
-                class="fill-jacarta-500 h-4 w-4 dark:fill-white"
-              >
-                <path fill="none" d="M0 0h24v24H0z" />
-                <path
-                  d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"
-                />
-              </svg>
-            </span>
-          </form>
+    <!-- Start left sidebar-menu -->
+    
+    <!-- end left sidebar-menu -->
 
-          <!-- Primary Nav -->
-          <nav class="navbar w-full">
-            <ul class="flex flex-col lg:flex-row">
-              <li class="js-nav-dropdown group relative">
-                <a
-                  href="/"
-                  class="dropdown-toggle text-jacarta-700 font-display hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent flex items-center justify-between py-3.5 text-base dark:text-white lg:px-5"
-                  >Home
+    <!-- start chat-leftsidebar -->
+    <div class="chat-leftsidebar">
 
-                </a>
-              </li>
-              <li class="group">
-                <a
-                  href="car.html"
-                  class="text-jacarta-700 font-display hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent flex items-center justify-between py-3.5 text-base dark:text-white lg:px-5"
-                  >Car</a
-                >
-              </li>
-              <li class="group">
-                <a
-                  href="skill.html"
-                  class="text-jacarta-700 font-display hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent flex items-center justify-between py-3.5 text-base dark:text-white lg:px-5"
-                  >Skill</a
-                >
-              </li>
-              <li class="group">
-                <a
-                  href="action.html"
-                  class="text-jacarta-700 font-display hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent flex items-center justify-between py-3.5 text-base dark:text-white lg:px-5"
-                  >Action</a
-                >
-              </li>
-              <li class="group">
-                <a
-                  href="shooting.html"
-                  class="text-jacarta-700 font-display hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent flex items-center justify-between py-3.5 text-base dark:text-white lg:px-5"
-                  >Shooting</a
-                >
-              </li>
-              <li class="group">
-                <a
-                  href="sport.html"
-                  class="text-jacarta-700 font-display hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent flex items-center justify-between py-3.5 text-base dark:text-white lg:px-5"
-                  >Sport</a
-                >
-              </li>
-              <li class="group">
-                <a
-                  href="idle.html"
-                  class="text-jacarta-700 font-display hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent flex items-center justify-between py-3.5 text-base dark:text-white lg:px-5"
-                  >Idle</a
-                >
-              </li>
-            </ul>
-          </nav>
-          <!-- Actions -->
-          <div class="ml-8 hidden lg:flex xl:ml-12">
-            <!-- Dark Mode -->
-            <a
-              href="#"
-              class="border-jacarta-100 hover:bg-accent focus:bg-accent group dark:hover:bg-accent js-dark-mode-trigger ml-2 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="24"
-                height="24"
-                class="fill-jacarta-700 dark-mode-light h-4 w-4 transition-colors group-hover:fill-white group-focus:fill-white dark:hidden"
-              >
-                <path fill="none" d="M0 0h24v24H0z" />
-                <path
-                  d="M11.38 2.019a7.5 7.5 0 1 0 10.6 10.6C21.662 17.854 17.316 22 12.001 22 6.477 22 2 17.523 2 12c0-5.315 4.146-9.661 9.38-9.981z"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="24"
-                height="24"
-                class="fill-jacarta-700 dark-mode-dark hidden h-4 w-4 transition-colors group-hover:fill-white group-focus:fill-white dark:block dark:fill-white"
-              >
-                <path fill="none" d="M0 0h24v24H0z" />
-                <path
-                  d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Mobile Menu Actions -->
-        <div class="ml-auto flex lg:hidden">
-       
-
-          <!-- Dark Mode -->
-          <a
-            href="#"
-            class="js-dark-mode-trigger border-jacarta-100 hover:bg-accent dark:hover:bg-accent focus:bg-accent group ml-2 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="24"
-              height="24"
-              class="fill-jacarta-700 dark-mode-light h-4 w-4 transition-colors group-hover:fill-white group-focus:fill-white dark:hidden"
-            >
-              <path fill="none" d="M0 0h24v24H0z" />
-              <path
-                d="M11.38 2.019a7.5 7.5 0 1 0 10.6 10.6C21.662 17.854 17.316 22 12.001 22 6.477 22 2 17.523 2 12c0-5.315 4.146-9.661 9.38-9.981z"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="24"
-              height="24"
-              class="fill-jacarta-700 dark-mode-dark hidden h-4 w-4 transition-colors group-hover:fill-white group-focus:fill-white dark:block dark:fill-white"
-            >
-              <path fill="none" d="M0 0h24v24H0z" />
-              <path
-                d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"
-              />
-            </svg>
-          </a>
-
-          <!-- Mobile Menu Toggle -->
-          <button
-            class="js-mobile-toggle border-jacarta-100 hover:bg-accent dark:hover:bg-accent focus:bg-accent group ml-2 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
-            aria-label="open mobile menu"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="24"
-              height="24"
-              class="fill-jacarta-700 h-4 w-4 transition-colors group-hover:fill-white group-focus:fill-white dark:fill-white"
-            >
-              <path fill="none" d="M0 0h24v24H0z" />
-              <path d="M18 18v2H6v-2h12zm3-7v2H3v-2h18zm-3-7v2H6V4h12z" />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </header>
-
-    <main>
-      <!-- Hero -->
-      <section class="relative pb-10 pt-20 md:pt-32 lg:h-[88vh]">
-        <picture class="pointer-events-none absolute inset-x-0 top-0 -z-10 dark:hidden">
-          <img src="img/gradient.jpg" alt="gradient" />
-        </picture>
-        <picture class="pointer-events-none absolute inset-x-0 top-0 -z-10 hidden dark:block">
-          <img src="img/gradient_dark.jpg" alt="gradient dark" />
-        </picture>
-
-        <div class="container h-full">
-          <div class="grid h-full items-center gap-4 md:grid-cols-12">
-            <div
-              class="col-span-6 flex h-full flex-col items-center justify-center py-10 md:items-start md:py-20 xl:col-span-4"
-            >
-              <h1
-                class="text-jacarta-700 font-display mb-6 text-center text-5xl dark:text-white md:text-left lg:text-6xl xl:text-7xl"
-              >
-                Egg Car</h1>
-              <p class="dark:text-jacarta-300 mb-8 text-center text-lg md:text-left">
-                It's a vehicle with an egg in it! Your task is to carry the egg as far as possible without shattering it. With all those slopes, that's easier said than done. You may enhance your automobile by collecting coins.
-              </p>
-              <div class="flex space-x-4">
-                <a
-                  href="/play.html"
-                  class="bg-accent shadow-accent-volume hover:bg-accent-dark w-36 rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
-                >
-                  Play
-                </a>
-              
-              </div>
-            </div>
-
-            <!-- Hero image -->
-            <div class="col-span-6 xl:col-span-8">
-              <div class="relative text-center md:pl-8 md:text-right">
-                <svg
-                  viewbox="0 0 200 200"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="mt-8 inline-block w-72 rotate-[8deg] sm:w-full lg:w-[24rem] xl:w-[35rem]"
-                >
-                  <defs>
-                    <clipPath id="clipping" clipPathUnits="userSpaceOnUse">
-                      <path
-                        d="
-                    M 0, 100
-                    C 0, 17.000000000000004 17.000000000000004, 0 100, 0
-                    S 200, 17.000000000000004 200, 100
-                        183, 200 100, 200
-                        0, 183 0, 100
-                "
-                        fill="#9446ED"
-                      ></path>
-                    </clipPath>
-                  </defs>
-                  <g clip-path="url(#clipping)">
-                    <!-- Bg image -->
-                    <image href="img/hero/hero.jpg" width="200" height="200" clip-path="url(#clipping)" />
-                  </g>
-                </svg>
-                <img src="img/hero/3D_elements.png" alt="" class="animate-fly absolute top-0 md:-right-[10%]" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- end hero -->
-      <!-- game -->
-      <!-- end game-->
-      <!-- Trending Categories -->
-      <section class="py-24">
-        <div class="container">
-          <h2 class="font-display text-jacarta-700 mb-8 text-center text-3xl dark:text-white">
-            <span
-              class="mr-1 inline-block h-6 w-6 bg-contain bg-center text-xl"
-              style="
-                background-image: url(/img/26a1.png);
-              "
-            ></span>
-            Trending categories
-          </h2>
-          <h2 style="color: #fff;"><strong>After receiving your information. We are updating the games as per your request. Because the number of manpower is limited. So we will proceed with the update gradually. Hope these updates will bring you a new experience. If you have any other requests, please contribute to us.  <a href="/update.html"  style="color: red">Play Update Games</a></strong></h2><br><br>
-          <!-- <h2 style="color: #fff;"><strong>We have release <a href="/chat/"  style="color: rgb(238, 9, 9)">Chat with friend</a></strong></h2><br><br> -->
+        <div class="tab-content">
       
-          <!-- Filter -->
-          <div class="mb-8 flex flex-wrap items-center justify-between">
-            <ul class="flex flex-wrap items-center">
-              <li class="my-1 mr-2.5">
-                <a
-                 
-                  class="dark:bg-jacarta-700 group dark:hover:bg-accent hover:bg-accent bg-jacarta-100 font-display text-jacarta-700 flex h-9 items-center justify-center rounded-lg px-4 text-sm font-semibold transition-colors hover:border-transparent hover:text-white dark:text-white"
-                  >All</a
-                >
-              </li>
-              <li class="my-1 mr-2.5">
-                <a
-                  href="/car.html"
-                  class="dark:border-jacarta-600 dark:bg-jacarta-900 dark:hover:bg-accent group hover:bg-accent border-jacarta-100 font-display text-jacarta-500 flex h-9 items-center rounded-lg border bg-white px-4 text-sm font-semibold transition-colors hover:border-transparent hover:text-white dark:text-white dark:hover:border-transparent dark:hover:text-white"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    height="24"
-                    class="fill-jacarta-700 dark:fill-jacarta-100 mr-1 h-4 w-4 transition-colors group-hover:fill-white"
-                  >
-                    <path fill="none" d="M0 0h24v24H0z" />
-                    <path
-                      d="M12 2c5.522 0 10 3.978 10 8.889a5.558 5.558 0 0 1-5.556 5.555h-1.966c-.922 0-1.667.745-1.667 1.667 0 .422.167.811.422 1.1.267.3.434.689.434 1.122C13.667 21.256 12.9 22 12 22 6.478 22 2 17.522 2 12S6.478 2 12 2zm-1.189 16.111a3.664 3.664 0 0 1 3.667-3.667h1.966A3.558 3.558 0 0 0 20 10.89C20 7.139 16.468 4 12 4a8 8 0 0 0-.676 15.972 3.648 3.648 0 0 1-.513-1.86zM7.5 12a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm9 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM12 9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
-                    />
-                  </svg>
-                  <span>Car</span>
-                </a>
-              </li>
-              <li class="my-1 mr-2.5">
-                <a
-                  href="/action.html"
-                  class="dark:border-jacarta-600 dark:bg-jacarta-900 dark:hover:bg-accent group hover:bg-accent border-jacarta-100 font-display text-jacarta-500 flex h-9 items-center rounded-lg border bg-white px-4 text-sm font-semibold transition-colors hover:border-transparent hover:text-white dark:text-white dark:hover:border-transparent dark:hover:text-white"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    height="24"
-                    class="fill-jacarta-700 dark:fill-jacarta-100 mr-1 h-4 w-4 transition-colors group-hover:fill-white"
-                  >
-                    <path fill="none" d="M0 0h24v24H0z" />
-                    <path
-                      d="M2 4a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v5.5a2.5 2.5 0 1 0 0 5V20a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4zm6.085 15a1.5 1.5 0 0 1 2.83 0H20v-2.968a4.5 4.5 0 0 1 0-8.064V5h-9.085a1.5 1.5 0 0 1-2.83 0H4v14h4.085zM9.5 11a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
-                    />
-                  </svg>
-                  <span>Action</span>
-                </a>
-              </li>
-              <li class="my-1 mr-2.5">
-                <a
-                  href="/skill.html"
-                  class="dark:border-jacarta-600 dark:bg-jacarta-900 dark:hover:bg-accent group hover:bg-accent border-jacarta-100 font-display text-jacarta-500 flex h-9 items-center rounded-lg border bg-white px-4 text-sm font-semibold transition-colors hover:border-transparent hover:text-white dark:text-white dark:hover:border-transparent dark:hover:text-white"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    height="24"
-                    class="fill-jacarta-700 dark:fill-jacarta-100 mr-1 h-4 w-4 transition-colors group-hover:fill-white"
-                  >
-                    <path fill="none" d="M0 0h24v24H0z" />
-                    <path
-                      d="M5 15v4h4v2H3v-6h2zm16 0v6h-6v-2h4v-4h2zm-8.001-9l4.4 11h-2.155l-1.201-3h-4.09l-1.199 3H6.6l4.399-11h2zm-1 2.885L10.752 12h2.492l-1.245-3.115zM9 3v2H5v4H3V3h6zm12 0v6h-2V5h-4V3h6z"
-                    />
-                  </svg>
-                  <span>Skill</span>
-                </a>
-              </li>
-              <li class="my-1 mr-2.5">
-                <a
-                  href="/shooting.html"
-                  class="dark:border-jacarta-600 dark:bg-jacarta-900 dark:hover:bg-accent group hover:bg-accent border-jacarta-100 font-display text-jacarta-500 flex h-9 items-center rounded-lg border bg-white px-4 text-sm font-semibold transition-colors hover:border-transparent hover:text-white dark:text-white dark:hover:border-transparent dark:hover:text-white"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    height="24"
-                    class="fill-jacarta-700 dark:fill-jacarta-100 mr-1 h-4 w-4 transition-colors group-hover:fill-white"
-                  >
-                    <path fill="none" d="M0 0h24v24H0z" />
-                    <path d="M12 13.535V3h8v3h-6v11a4 4 0 1 1-2-3.465z" />
-                  </svg>
-                  <span>Shooting</span>
-                </a>
-              </li>
-              <li class="my-1 mr-2.5">
-                <a
-                  href="/sport.html"
-                  class="dark:border-jacarta-600 dark:bg-jacarta-900 dark:hover:bg-accent group hover:bg-accent border-jacarta-100 font-display text-jacarta-500 flex h-9 items-center rounded-lg border bg-white px-4 text-sm font-semibold transition-colors hover:border-transparent hover:text-white dark:text-white dark:hover:border-transparent dark:hover:text-white"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    height="24"
-                    class="fill-jacarta-700 dark:fill-jacarta-100 mr-1 h-4 w-4 transition-colors group-hover:fill-white"
-                  >
-                    <path fill="none" d="M0 0h24v24H0z" />
-                    <path
-                      d="M2 6c0-.552.455-1 .992-1h18.016c.548 0 .992.445.992 1v14c0 .552-.455 1-.992 1H2.992A.994.994 0 0 1 2 20V6zm2 1v12h16V7H4zm10 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 2a5 5 0 1 1 0-10 5 5 0 0 1 0 10zM4 2h6v2H4V2z"
-                    />
-                  </svg>
-                  <span>Sport</span>
-                </a>
-              </li>
-              <li class="my-1 mr-2.5">
-                <a
-                  href="/idle.html"
-                  class="dark:border-jacarta-600 dark:bg-jacarta-900 dark:hover:bg-accent group hover:bg-accent border-jacarta-100 font-display text-jacarta-500 flex h-9 items-center rounded-lg border bg-white px-4 text-sm font-semibold transition-colors hover:border-transparent hover:text-white dark:text-white dark:hover:border-transparent dark:hover:text-white"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    height="24"
-                    class="fill-jacarta-700 dark:fill-jacarta-100 mr-1 h-4 w-4 transition-colors group-hover:fill-white"
-                  >
-                    <path fill="none" d="M0 0h24v24H0z" />
-                    <path
-                      d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-2.29-2.333A17.9 17.9 0 0 1 8.027 13H4.062a8.008 8.008 0 0 0 5.648 6.667zM10.03 13c.151 2.439.848 4.73 1.97 6.752A15.905 15.905 0 0 0 13.97 13h-3.94zm9.908 0h-3.965a17.9 17.9 0 0 1-1.683 6.667A8.008 8.008 0 0 0 19.938 13zM4.062 11h3.965A17.9 17.9 0 0 1 9.71 4.333 8.008 8.008 0 0 0 4.062 11zm5.969 0h3.938A15.905 15.905 0 0 0 12 4.248 15.905 15.905 0 0 0 10.03 11zm4.259-6.667A17.9 17.9 0 0 1 15.973 11h3.965a8.008 8.008 0 0 0-5.648-6.667z"
-                    />
-                  </svg>
-                  <span>Idle</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7889675448259925"
-              crossorigin="anonymous"></script>
-          <!-- eggy_new -->
-          <ins class="adsbygoogle"
-              style="display:block"
-              data-ad-client="ca-pub-7889675448259925"
-              data-ad-slot="7503584298"
-              data-ad-format="auto"
-              data-full-width-responsive="true"></ins>
-          <script>
-              (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
-          <!-- Grid -->
-          <div class="grid grid-cols-1 gap-[1.875rem] md:grid-cols-2 lg:grid-cols-4" id="listgame">
-          </div>
-        </div>
-      </section>
-      <!-- end trending categories -->
-      <!-- Process / Newsletter -->
-      <section class="dark:bg-jacarta-800 relative py-24">
-        <picture class="pointer-events-none absolute inset-0 -z-10 dark:hidden">
-          <img src="img/gradient_light.jpg" alt="gradient" class="h-full" />
-        </picture>
-        <div class="container">
-          <h2 class="font-display text-jacarta-700 mb-10 text-center text-3xl dark:text-white">
-            Contact
-          </h2>
-          <p class="text-jacarta-700 mx-auto max-w-2xl text-center text-lg dark:text-white">
-            Enter your farorte games
-          </p>
 
-          <div class="mx-auto mt-7 max-w-md text-center">
-            <form class="relative">
-              <input
-                type="email"
-                placeholder="Game Name"
-                class="dark:bg-jacarta-700 dark:border-jacarta-600 focus:ring-accent border-jacarta-100 w-full rounded-full border py-3 px-4 dark:text-white dark:placeholder-white"
-              />
-              <button
-                class="hover:bg-accent-dark font-display bg-accent absolute top-2 right-2 rounded-full px-6 py-2 text-sm text-white"
-              >
-                Submit
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-      <!-- end process / newsletter -->
-    </main>
-    <!-- Footer -->
-    <footer class="dark:bg-jacarta-900 page-footer bg-white">
-      <div class="container">
-        <div class="grid grid-cols-6 gap-x-7 gap-y-14 pt-24 pb-12 md:grid-cols-12">
-          <div class="col-span-3 md:col-span-4">
-            <!-- Logo -->
-            <a href="/" class="mb-6 inline-block">
-              <img src="img/logo.png" class="max-h-7 dark:hidden" alt="Eggy Car" />
-              <img src="img/logo_white.png" class="hidden max-h-7 dark:block" alt="Eggy Car" />
-            </a>
-            <p class="dark:text-jacarta-300 mb-12">
-              Play free online game at school
-              <a href="mailto:thanhtoanlc999@gmail.com">Contact: thanhtoanlc999@gmail.com</a>
-            </p>
-            <!-- Socials -->
-            <div class="flex space-x-5">
-              <a href="#" class="group">
-                <svg
-                  aria-hidden="true"
-                  focusable="false"
-                  data-prefix="fab"
-                  data-icon="facebook"
-                  class="group-hover:fill-accent fill-jacarta-300 h-5 w-5 dark:group-hover:fill-white"
-                  role="img"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                >
-                  <path
-                    d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"
-                  ></path>
-                </svg>
-              </a>
-              <a href="#" class="group">
-                <svg
-                  aria-hidden="true"
-                  focusable="false"
-                  data-prefix="fab"
-                  data-icon="twitter"
-                  class="group-hover:fill-accent fill-jacarta-300 h-5 w-5 dark:group-hover:fill-white"
-                  role="img"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                >
-                  <path
-                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
-                  ></path>
-                </svg>
-              </a>
-              <a href="#" class="group">
-                <svg
-                  aria-hidden="true"
-                  focusable="false"
-                  data-prefix="fab"
-                  data-icon="discord"
-                  class="group-hover:fill-accent fill-jacarta-300 h-5 w-5 dark:group-hover:fill-white"
-                  role="img"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 640 512"
-                >
-                  <path
-                    d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"
-                  ></path>
-                </svg>
-              </a>
-              <a href="#" class="group">
-                <svg
-                  aria-hidden="true"
-                  focusable="false"
-                  data-prefix="fab"
-                  data-icon="instagram"
-                  class="group-hover:fill-accent fill-jacarta-300 h-5 w-5 dark:group-hover:fill-white"
-                  role="img"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 448 512"
-                >
-                  <path
-                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
-                  ></path>
-                </svg>
-              </a>
-              <a href="#" class="group">
-                <svg
-                  aria-hidden="true"
-                  focusable="false"
-                  data-prefix="fab"
-                  data-icon="tiktok"
-                  class="group-hover:fill-accent fill-jacarta-300 h-5 w-5 dark:group-hover:fill-white"
-                  role="img"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 448 512"
-                >
-                  <path
-                    d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"
-                  ></path>
-                </svg>
-              </a>
+            <!-- Start chats tab-pane -->
+            <div class="tab-pane show active" id="pills-chat" role="tabpanel" aria-labelledby="pills-chat-tab">
+                <!-- Start chats content -->
+                <div>
+                    <div class="px-4 pt-4">
+                        <div class="d-flex align-items-start">
+                            <div class="flex-grow-1">
+                                <a href="/">Home</a> /
+                                <h4 class="mb-4">Messages</h4>
+                            </div>
+                        </div>
+                        <form>
+                            <div class="input-group search-panel mb-3">
+                                <input type="text" class="form-control bg-light border-0" id="searchChatUser" onkeyup="searchUser()"
+                                    placeholder="Search here..." aria-label="Example text with button addon"
+                                    aria-describedby="searchbtn-addon" autocomplete="off">
+                                <button class="btn btn-light p-0" type="button" id="searchbtn-addon"><i
+                                        class='bx bx-search align-middle'></i></button>
+                            </div>
+                        </form>
+                    </div> <!-- .p-4 -->
+
+                    <div class="chat-room-list" data-simplebar>
+                        <!-- Start chat-message-list -->
+                        <!-- <h5 class="mb-3 px-4 mt-4 fs-11 text-muted text-uppercase">Server</h5>
+
+                        <div class="chat-message-list">
+                            <ul class="list-unstyled chat-list chat-user-list" id="favourite-users">
+                                <li id="contact-id-13" data-name="channel" class="active">
+                                    <a href="javascript: void(0);" class="unread-msg-user" data-server="class.tbg95.com" onclick="connectServer(this)">
+
+                                        Server 1 (.com)
+                                    </a>
+                                    </li>
+                                    <li id="contact-id-13" data-name="channel">
+                                    <a href="javascript: void(0);" class="unread-msg-user" data-room="class.2beat.io" onclick="connectServer(this)">
+
+                                        Server 2 (.io)
+                                    </a>
+                                    </li>
+                                    <li id="contact-id-13" data-name="channel" >
+                                    <a href="javascript: void(0);" class="unread-msg-user" data-room="class.slopecalculator.org" onclick="connectServer(this)">
+
+                                        Server 2 (.org)
+                                    </a>
+                                    </li>
+                            </ul>
+                        </div>
+                        <div class="chat-message-list">
+
+                            <ul class="list-unstyled chat-list chat-user-list" id="usersList">
+                            </ul>
+                        </div> -->
+
+                        <div class="d-flex align-items-center px-4 mt-5 mb-2">
+                            <div class="flex-grow-1">
+                                <h4 class="mb-0 fs-11 text-muted text-uppercase">Channels</h4>
+                            </div>
+          
+                        </div>
+
+                        <div class="chat-message-list">
+
+                            <ul class="list-unstyled chat-list chat-user-list mb-3" id="channelList">
+                                <li id="contact-id-13" data-name="channel" class="active">
+                                    <a href="javascript: void(0);" class="unread-msg-user" data-room="all" onclick="joinRoom(this)">
+                                        <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0 me-2">
+                                            <div class="chat-user-img online align-self-center">
+                                            <img src="assets/images/users/group-img.jpg" class="rounded-circle avatar-xs" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <h6 class="text-truncate mb-0">Global</h6>
+                                            <!-- <p class="text-truncate text-muted fs-13 mb-0">23 Members</p> -->
+                                        </div>
+                                        <div onclick="addFavourite(this)" data-room="all">
+                                            <i style="font-size: 24px;" class="ri-bookmark-3-line"></i>
+                                        </div>
+                                        </div>
+                                    </a>
+                                    
+                                </li>
+                                <li id="contact-id-13" data-name="channel" >
+                                    <a href="javascript: void(0);" class="unread-msg-user" data-room="report" onclick="joinRoom(this)">
+                                        <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0 me-2">
+                                            <div class="chat-user-img online align-self-center">
+                                            <img src="assets/images/users/group-img.jpg" class="rounded-circle avatar-xs" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <h6 class="text-truncate mb-0">Report</h6>
+                                            <!-- <p class="text-truncate text-muted fs-13 mb-0">23 Members</p> -->
+                                        </div>
+                                        <div onclick="addFavourite(this)" data-room="report">
+                                            <i style="font-size: 24px;" class="ri-bookmark-3-line"></i>
+                                        </div>
+                                        </div>
+                                    </a>
+                                    
+                                </li>
+                                <!-- <li id="contact-id-12" data-name="channel">
+                    
+                                    <a href="javascript: void(0);" class="unread-msg-user" data-room="slope" onclick="joinRoom(this)">
+                                      <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0 me-2">
+                                          <div class="chat-user-img online align-self-center">
+                                            <img src="assets/images/users/group-img.jpg" class="rounded-circle avatar-xs" alt="">
+                                          </div>
+                                        </div>
+                                        <div class="flex-grow-1 overflow-hidden">
+                                          <h6 class="text-truncate mb-0">Slope</h6>
+                        
+                                        </div>
+                                        <div onclick="addFavourite(this)" data-room="slope">
+                                          <i style="font-size: 24px;" class="ri-bookmark-3-line"></i>
+                                        </div>
+                                      </div>
+                                    </a>
+                                </li> -->
+                            </ul>
+                        </div>
+                        <!-- End chat-message-list -->
+                    </div>
+
+                </div>
+                <!-- Start chats content -->
             </div>
-          </div>
-
+            <!-- End chats tab-pane -->
         </div>
-        <div class="flex flex-col items-center justify-between space-y-2 py-8 sm:flex-row sm:space-y-0">
-          <span class="dark:text-jacarta-400 text-sm"
-            >&copy;
-            <script>
-              document.write(new Date().getFullYear())
-            </script>
-            eggy-car.github.io</span>
-          <ul class="dark:text-jacarta-400 flex flex-wrap space-x-4 text-sm">
-            <li>
-              <a href="#" class="hover:text-accent">Terms and conditions</a>
-            </li>
-            <li><a href="#" class="hover:text-accent">Privacy policy</a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
+        <!-- end tab content -->
+    </div>
+    <!-- end chat-leftsidebar -->
 
-    <!-- JS Scripts -->
-    <script src="./js/app.bundle.js"></script>
-    <script src="/js/custom.js?v=3"></script>
-  </body>
+    <!-- Start User chat -->
+    <div class="user-chat w-100 overflow-hidden">
+
+        <div class="chat-content d-lg-flex">
+            <!-- start chat conversation section -->
+            <div class="w-100 overflow-hidden position-relative">
+                <!-- conversation user -->
+                
+
+
+
+                <!-- conversation group -->
+                <div id="channel-chat" class="position-relative">
+                    <div class="py-3 user-chat-topbar">
+                        <div class="row align-items-center">
+                            <div class="col-sm-8 col-8">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-grow-1 overflow-hidden">
+                                        <div class="d-flex align-items-center">
+                                            <div class="flex-shrink-0 chat-user-img online user-own-img align-self-center me-3">
+                                                <img src="assets/images/users/user-dummy-img.jpg" class="rounded-circle avatar-sm"
+                                                    alt="">
+                                            </div>
+                                            <div class="flex-grow-1 overflow-hidden">
+                                                <h6 class="text-truncate mb-0 fs-18"><a href="#"
+                                                        class="user-profile-show text-reset">TBG95 Chats</a></h6>
+                                                <!-- <p class="text-truncate text-muted mb-0"><small>24 Members</small></p> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+          
+                        </div>
+                    </div>
+                    <!-- end chat user head -->
+
+                    <!-- start chat conversation -->
+
+                    <div class="chat-conversation p-3 p-lg-4" id="chat-conversation" data-simplebar>
+                        <ul class="list-unstyled chat-conversation-list" id="channel-conversation">
+         
+            
+                        </ul>
+                    </div>
+                    <div class="alert alert-warning alert-dismissible copyclipboard-alert px-4 fade" id="copyClipBoardChannel"
+                        role="alert">
+                        message copied
+                    </div>
+                    <!-- end chat conversation end -->
+                </div>
+
+                <!-- start chat input section -->
+                <div class="position-relative">
+                    <div class="chat-input-section p-4 border-top">
+
+                        <form id="chatinput-form" enctype="multipart/form-data">
+                            <div class="row g-0 align-items-center">
+                                <!-- <div class="file_Upload"></div> -->
+                                <div class="col-auto">
+                                    <div class="chat-input-links me-md-2">
+
+                                        <div class="links-list-item" data-bs-toggle="tooltip" data-bs-trigger="hover"
+                                            data-bs-placement="top" title="Emoji">
+                                            <button type="button"
+                                                class="btn btn-link text-decoration-none btn-lg waves-effect emoji-btn"
+                                                id="emoji-btn">
+                                                <i class="bx bx-smile align-middle"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="position-relative">
+                                        <div class="chat-input-feedback">
+                                            Please Enter a Message
+                                        </div>
+                                        <input autocomplete="off" type="text"
+                                            class="form-control form-control-lg bg-light border-0 chat-input" autofocus
+                                            id="chat-input" placeholder="Type your message...">
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="chat-input-links ms-2 gap-md-1">
+                                        <div class="links-list-item">
+                                            <button type="submit"
+                                                class="btn btn-primary btn-lg chat-send waves-effect waves-light"
+                                                data-bs-toggle="collapse" data-bs-target=".chat-input-collapse1.show">
+                                                <i class="bx bxs-send align-middle" id="submit-btn"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- end chat input section -->
+            </div>
+            <!-- end chat conversation section -->
+
+            <!-- start User profile detail sidebar -->
+            
+            <!-- end User profile detail sidebar -->
+        </div>
+        <!-- end user chat content -->
+    </div>
+    <!-- End User chat -->
+</div>
+<!-- end  layout wrapper -->
+
+
+
+
+<!-- JAVASCRIPT -->
+<script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/libs/simplebar/simplebar.min.js"></script>
+<script src="assets/libs/node-waves/waves.min.js"></script>
+
+<!-- Modern colorpicker bundle -->
+<script src="assets/libs/@simonwep/pickr/pickr.min.js"></script>
+
+<!-- glightbox js -->
+<script src="assets/libs/glightbox/js/glightbox.min.js"></script>
+
+<!-- Swiper JS -->
+<script src="assets/libs/swiper/swiper-bundle.min.js"></script>
+
+<!-- fg-emoji-picker JS -->
+<script src="assets/libs/fg-emoji-picker/fgEmojiPicker.js"></script>
+
+<!-- page init -->
+<!-- <script src="assets/js/pages/index.init.js"></script> -->
+<script src="assets/js/socket.io.min.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+    // list ava
+    const listAva = ["001-austrian.svg","001-businessman.svg","001-man.svg","001-rockabilly.svg","002-Dutch.svg","002-businesswoman.svg","002-gamer.svg","002-man.svg","003-businessman.svg","003-european.svg","003-man.svg","003-rockabilly.svg","004-beatnik.svg","004-businessman.svg","004-east european.svg","004-man.svg","005-african.svg","005-beatnik.svg","005-businessman.svg","005-man.svg","006-arab.svg","006-businessman.svg","006-surfer.svg","006-woman.svg","007-Irish.svg","007-businesswoman.svg","007-surfer.svg","007-woman.svg","008-businesswoman.svg","008-punk.svg","008-scottish.svg","008-woman.svg","009-british.svg","009-businesswoman.svg","009-punk.svg","009-woman.svg","010-Hippie.svg","010-businesswoman.svg","010-spanish.svg","010-woman.svg","011-Hippie.svg","011-bolivia.svg","011-businessman.svg","011-man.svg","012-businessman.svg","012-gamer.svg","012-german.svg","012-man.svg","013-businessman.svg","013-man.svg","013-mongolian.svg","013-preppy.svg","014-businesswoman.svg","014-georgian.svg","014-man.svg","014-preppy.svg","015-businessman.svg","015-man.svg","015-maori.svg","015-mod.svg","016-businessman.svg","016-hawaiian.svg","016-mod.svg","016-woman.svg","017-businesswoman.svg","017-rastafari.svg","017-russian.svg","017-woman.svg","018-businessman.svg","018-rastafari.svg","018-russian.svg","018-woman.svg","019-australian.svg","019-businessman.svg","019-employee.svg","019-woman.svg","020-businessman.svg","020-employee.svg","020-turkish.svg","020-woman.svg","021-bedouin.svg","021-businesswoman.svg","021-disco.svg","021-man.svg","022-businesswoman.svg","022-cuban.svg","022-disco.svg","022-man.svg","023-businessman.svg","023-hip hop.svg","023-korean.svg","023-man.svg","024-businesswoman.svg","024-korean.svg","024-man.svg","024-skater.svg","025-businessman.svg","025-israelite.svg","025-man.svg","025-skater.svg","026-businesswoman.svg","026-goth.svg","026-israelite.svg","026-woman.svg","027-businessman.svg","027-goth.svg","027-peruvian.svg","027-woman.svg","028-businesswoman.svg","028-chinese.svg","028-hipster.svg","028-woman.svg","029-businessman.svg","029-eskimo.svg","029-hipster.svg","029-woman.svg","030-businessman.svg","030-chinese.svg","030-heavy metal.svg","030-woman.svg","031-businesswoman.svg","031-heavy metal.svg","031-indian.svg","031-man.svg","032-businessman.svg","032-grunge.svg","032-man.svg","032-vietnamese.svg","033-businessman.svg","033-grunge.svg","033-man.svg","033-uzbek.svg","034-businessman.svg","034-gypsy.svg","034-hip hop.svg","034-man.svg","035-businessman.svg","035-gypsy.svg","035-man.svg","035-otaku.svg","036-Tibetan.svg","036-businesswoman.svg","036-otaku.svg","036-woman.svg","037-businessman.svg","037-japanese.svg","037-steampunk.svg","037-woman.svg","038-businesswoman.svg","038-jamaican.svg","038-steampunk.svg","038-woman.svg","039-businesswoman.svg","039-native american.svg","039-rocker.svg","039-woman.svg","040-businesswoman.svg","040-cowboy.svg","040-rocker.svg","040-woman.svg","041-biker.svg","041-businessman.svg","041-man.svg","041-mexican.svg","042-biker.svg","042-businesswoman.svg","042-indian.svg","042-man.svg","043-brazilian.svg","043-businesswoman.svg","043-man.svg","043-posh.svg","044-arabian.svg","044-businessman.svg","044-man.svg","044-posh.svg","045-african.svg","045-bandit.svg","045-businesswoman.svg","045-man.svg","046-businessman.svg","046-egyptian.svg","046-swagger.svg","046-woman.svg","047-bushmen.svg","047-businesswoman.svg","047-geek.svg","047-woman.svg","048-arabian.svg","048-businessman.svg","048-geek.svg","048-woman.svg","049-businessman.svg","049-emo.svg","049-icelandic.svg","049-woman.svg","050-businesswoman.svg","050-emo.svg","050-macedonian.svg","050-woman.svg","astronaut.svg","athlete.svg","builder.svg","carpenter.svg","cashier.svg","chef.svg","chemist.svg","clown.svg","concierge.svg","courier.svg","detective.svg","diver.svg","dj.svg","doctor.svg","dyer.svg","electrician.svg","farmer.svg","firefighter.svg","fisherman.svg","gardener.svg","hairdresser.svg","lumberjack.svg","magician.svg","maid.svg","manager.svg","mechanic.svg","miner.svg","nurse.svg","painter.svg","pensioner.svg","photographer.svg","pilot.svg","plumber.svg","policeman.svg","politician.svg","postman.svg","priest.svg","professor.svg","programmer.svg","sailor.svg","secretary.svg","showman.svg","singer.svg","soldier.svg","stewardess.svg","support.svg","taxi-driver.svg","teacher.svg","waiter.svg","writer.svg"];
+// chat emojiPicker input
+var emojiPicker = new FgEmojiPicker({
+    trigger: [".emoji-btn"],
+    removeOnSelection: false,
+    closeButton: true,
+    position: ["top", "right"],
+    preFetch: true,
+    dir: "assets/js/dir/json",
+    insertInto: document.querySelector(".chat-input"),
+  });
+
+  // emojiPicker position
+  var emojiBtn = document.getElementById("emoji-btn");
+  emojiBtn.addEventListener("click", function () {
+    setTimeout(function () {
+      var fgEmojiPicker = document.getElementsByClassName("fg-emoji-picker")[0];
+      if (fgEmojiPicker) {
+        var leftEmoji = window.getComputedStyle(fgEmojiPicker)
+          ? window.getComputedStyle(fgEmojiPicker).getPropertyValue("left")
+          : "";
+        if (leftEmoji) {
+          leftEmoji = leftEmoji.replace("px", "");
+          leftEmoji = leftEmoji - 40 + "px";
+          fgEmojiPicker.style.left = leftEmoji;
+        }
+      }
+    }, 0);
+  });
+ 
+ 
+</script>
+<script>
+    // console.log(listAva)
+    const socket = io("https://class.tbg95.com");
+    window.socket = socket;
+    // socket.emit("subscribe", "all");
+    // socket.emit('message', {room: 'room1', message: 'Hello, room1!'});
+    let userdata = JSON.parse(localStorage.getItem("tbg95_data")) || {};
+    let favourite = JSON.parse(localStorage.getItem("tbg95_room")) || {} ;
+    console.log(userdata);
+    window.userdata = userdata;
+    const room = localStorage.getItem("room") || "all";
+    console.log(room);
+    socket.emit("checkuser", userdata);
+    window.socket.emit("ConversationByRoomId", {userId: userdata._id, roomId: room, limit:100, page:0});
+    socket.on("system", function(data) {
+        console.log(data);
+        // window.room = "slope";
+    })
+    socket.on("user", (data) => {
+        console.log(data);
+        localStorage.setItem("tbg95_data", JSON.stringify(data.data));
+    });
+    socket.on("ConversationByRoomData", function(data){
+        console.log(data);
+        var i = 0;
+        var lastId = "";
+        document.querySelector('#channel-conversation').innerHTML = "";
+        const userdata = JSON.parse(localStorage.getItem("tbg95_data"));
+        data.forEach(item => {
+            var type = "left";
+            if(item.postedByUser == userdata._id){
+                type = "right";
+            }
+            var el = document.createElement("li");
+            el.className = `chat-list ${type}`;
+            el.id = item._id;
+            const avatar = listAva[parseInt(item.avatar)];
+            var html = `
+                                    <div class="conversation-list">
+                                    <div class="chat-avatar">
+                                        <img src="assets/images/avatar/${avatar}" alt="">
+                                    </div>
+                                    <div class="user-chat-content">
+                                        <div class="ctext-wrap">
+                                        <div class="ctext-wrap-content" id="${item._id}">
+                                            <p class="mb-0 ctext-content">${item.message}</p>
+                                        </div>
+                                        </div>
+                                        <div class="conversation-name"><small class="text-muted time">Player ${item.postedByUser}</small></div>
+                                    </div>
+                                    </div>
+                            `;
+            el.innerHTML = html;
+            document.querySelector('#chat-input').value = "";
+            document.querySelector('#channel-conversation').append(el);
+            i++;
+            if(i == Object.keys(data).length){
+                lastId = item._id;
+            }
+        });
+        if(Object.keys(data).length > 0 && i == Object.keys(data).length){
+            document.getElementById(lastId).scrollIntoView({
+            behavior: 'smooth'
+            });
+        }
+    })
+    socket.on('messageRoom', function (data) {
+        console.log(data);
+        var type = "left";
+        const userdata = JSON.parse(localStorage.getItem("tbg95_data"));
+        if(data.data.postedByUser == userdata._id){
+            type = "right"
+        }
+        var el = document.createElement("li");
+        el.className = `chat-list ${type}`;
+        el.id = data.data._id;
+        const avatar = listAva[parseInt(data.data.avatar)];
+        var html = `
+                                <div class="conversation-list">
+                                  <div class="chat-avatar">
+                                    <img src="assets/images/avatar/${avatar}" alt="">
+                                  </div>
+                                  <div class="user-chat-content">
+                                    <div class="ctext-wrap">
+                                      <div class="ctext-wrap-content" id="${data.data._id}">
+                                        <p class="mb-0 ctext-content">${data.data.message}</p>
+                                      </div>
+                                    </div>
+                                    <div class="conversation-name"><small class="text-muted time">Player ${data.data.postedByUser}</small></div>
+                                  </div>
+                                </div>
+                          `;
+        el.innerHTML = html;
+
+        document.querySelector('#chat-input').value = "";
+        document.querySelector('#channel-conversation').append(el);
+        if(document.querySelector('#channel-conversation').getElementsByTagName('li').length > 100){
+            document.querySelector('#channel-conversation').removeChild(document.querySelector('#channel-conversation').getElementsByTagName('li')[0]);
+        }
+
+        document.getElementById(data.data._id).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+    // socket.emit("hello", "world");
+    function logSubmit(event){
+        event.preventDefault();
+        const msg = document.querySelector('#chat-input').value;
+        var room = localStorage.getItem("room") || "all";
+        const userdata = JSON.parse(localStorage.getItem("tbg95_data"));
+        window.socket.emit("new message",{userId : userdata._id, roomId: room, msg: msg, avatar: userdata.avatar});
+    }
+    var chat_form = document.querySelector('#chatinput-form');
+    chat_form.addEventListener('submit', logSubmit);
+    function joinRoom(event){
+        document.querySelectorAll('#channelList li').forEach((item) => {
+            item.classList.remove("active");
+        });
+        
+        event.parentElement.classList.add("active");
+        console.log(1);
+        var room = event.dataset.room;
+        localStorage.setItem("room", room);
+        const userdata = JSON.parse(localStorage.getItem("tbg95_data"));
+        window.socket.emit("subscribe",{userId: userdata._id, room: room});
+        window.socket.emit("ConversationByRoomId", {userId: userdata._id, roomId: room, limit:100, page:0});
+        
+    }
+    function addFavourite(event){
+        if(event.querySelector('i').style.color == "red"){
+            event.querySelector('i').style.color = "#3e2e2e";
+        } else {
+            event.querySelector('i').style.color = "red";
+            storeFavourite(event.dataset.room);
+        }
+    }
+    function storeFavourite(room){
+        var list = JSON.parse(localStorage.getItem("tbg95_room")) || [] ;
+        var check = list.find(element => element == room);
+        if(!check){
+            list.push(room);
+        }
+        console.log(room);
+        localStorage.setItem("tbg95_room",JSON.stringify(list));
+    }
+    function connectServer(event){
+
+    }
+
+</script>
+</body>
+
 </html>
