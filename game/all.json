@@ -1449,14 +1449,12 @@
         "slug": "motox3m-3",
         "title": "Moto X3M 3",
         "cat": "Car, Update",
-        "domain": 7,
-        "img": "https://slope-game.github.io/newgame/motox3m-3/logo.png"
+        "domain": 7
       },
       {
         "slug": "motox3m-2",
         "title": "Moto X3M 2",
         "cat": "Car, Update",
-        "domain": 7,
-        "img": "https://slope-game.github.io/newgame/motox3m-2/logo.png"
+        "domain": 7
       }
 ]
